@@ -1,0 +1,193 @@
+RDZ MOTOS ELÉCTRICAS - GUÍA PARA MODIFICAR TODO
+===============================================
+
+IMPORTANTE
+----------
+Te dejé 2 versiones:
+
+1) index_embebido.html
+   Esta versión es la más segura.
+   Ya tiene las fotos adentro del mismo archivo.
+   No depende de rutas de imágenes ni de estilos externos.
+   Abrís ese archivo y debería verse completo.
+
+2) index.html + styles.css + imágenes
+   Esta versión es editable por partes.
+   Sirve si querés cambiar el diseño más fácil y manejar las fotos por separado.
+
+RECOMENDACIÓN
+-------------
+Si querés evitar cualquier problema de fotos o CSS, usá:
+index_embebido.html
+
+Si querés editar diseño más cómodo, usá:
+index.html y styles.css
+
+--------------------------------------------------
+1. CÓMO CAMBIAR EL NOMBRE DEL NEGOCIO
+--------------------------------------------------
+Abrí index_embebido.html o index.html y buscá:
+
+RDZ MOTOS ELÉCTRICAS
+
+Cambiás ese texto por el nombre nuevo.
+
+--------------------------------------------------
+2. CÓMO CAMBIAR EL NÚMERO DE WHATSAPP
+--------------------------------------------------
+Buscá este número dentro del HTML:
+
+573209357789
+
+Reemplazalo por el nuevo número sin el signo + ni espacios.
+Ejemplo:
++54 11 2795 9203
+queda:
+541127959203
+
+También podés cambiar el número visible:
+WhatsApp: +57 320 935 7789
+
+--------------------------------------------------
+3. CÓMO CAMBIAR LOS PRECIOS
+--------------------------------------------------
+Buscá:
+$950.000
+$850.000
+
+Y reemplazalos por los nuevos.
+
+--------------------------------------------------
+4. CÓMO CAMBIAR EL TEXTO DE LOS BOTONES
+--------------------------------------------------
+Buscá:
+Consúltenos
+Ver productos
+Consultar por WhatsApp
+Hablar por WhatsApp
+
+Y cambiá los textos.
+
+--------------------------------------------------
+5. CÓMO CAMBIAR LOS MENSAJES AUTOMÁTICOS DE WHATSAPP
+--------------------------------------------------
+Buscá enlaces como:
+https://wa.me/573209357789?text=Hola%20quiero%20consultar%20por%20BICI%20MOTO%201
+
+Después de ?text= está el mensaje.
+Podés cambiarlo.
+Los espacios se escriben como %20.
+
+--------------------------------------------------
+6. CÓMO CAMBIAR LOS COLORES PSICODÉLICOS
+--------------------------------------------------
+Abrí styles.css y buscá este bloque:
+
+:root{
+  --bg-a:#12051d;
+  --bg-b:#071a38;
+  --bg-c:#1d0632;
+  --text:#ffffff;
+  --muted:#d9d9e6;
+  --card:rgba(255,255,255,.08);
+  --line:rgba(255,255,255,.16);
+  --pink:#ff2fb3;
+  --cyan:#00eaff;
+  --yellow:#ffe600;
+  --lime:#c8ff00;
+  --violet:#8d4dff;
+  --green:#25d366;
+}
+
+Podés cambiar cualquiera de esos colores.
+
+Ejemplo de look más agresivo:
+--pink:#ff008c;
+--cyan:#00f7ff;
+--yellow:#fff000;
+--lime:#b7ff00;
+--violet:#7c00ff;
+
+--------------------------------------------------
+7. CÓMO CAMBIAR EL LOGO
+--------------------------------------------------
+Buscá:
+<div class="logo">RDZ</div>
+
+Podés reemplazar RDZ por otra sigla.
+
+Si querés poner una imagen como logo:
+- subí logo.png
+- reemplazá esa línea por:
+<img src="logo.png" alt="Logo RDZ" class="logo-img">
+
+Y en styles.css agregá:
+
+.logo-img{
+  width:120px;
+  height:120px;
+  object-fit:contain;
+  border-radius:50%;
+}
+
+--------------------------------------------------
+8. CÓMO CAMBIAR O SUBIR FOTOS
+--------------------------------------------------
+VERSIÓN SEGURA:
+Si usás index_embebido.html, las fotos ya están adentro.
+Ahí no hace falta tocar rutas.
+
+VERSIÓN EDITABLE:
+Si usás index.html, los nombres son:
+bici-moto-1.jpeg
+bici-moto-2.jpeg
+bici-moto-2-1.jpeg
+bici-moto-2-2.jpeg
+
+Todos esos archivos deben estar en la misma carpeta que index.html.
+
+Si querés reemplazar una foto:
+- borrás la vieja
+- ponés la nueva con el mismo nombre
+
+--------------------------------------------------
+9. CÓMO AGREGAR UN PRODUCTO NUEVO
+--------------------------------------------------
+Buscá un bloque que empiece así:
+
+<article class="card">
+
+Copiá todo ese bloque, pegalo debajo del otro producto y modificá:
+- nombre
+- precio
+- descripción
+- imágenes
+- link de WhatsApp
+
+--------------------------------------------------
+10. CÓMO CAMBIAR EL FONDO
+--------------------------------------------------
+En styles.css buscá:
+body{
+  background: ...
+
+y también:
+.hero::before
+
+Ahí cambiás el estilo del fondo.
+
+--------------------------------------------------
+11. QUÉ ARCHIVO ABRIR
+--------------------------------------------------
+Para abrir la web sin errores:
+index_embebido.html
+
+--------------------------------------------------
+12. SI QUERÉS SUBIRLA A INTERNET
+--------------------------------------------------
+Podés subirla a:
+- Netlify
+- Vercel
+- GitHub Pages
+
+Si usás index_embebido.html, es mucho más fácil porque va todo en un solo archivo.
